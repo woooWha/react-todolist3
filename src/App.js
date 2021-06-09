@@ -6,6 +6,7 @@ import {createGlobalStyle} from 'styled-components';
 import TodoTime from './components/TodoTime';
 import TodoList from './components/TodoList';
 import TodoChecking from './components/TodoChecking';
+import {TodoProvider} from './TodoContext';
 
 function App() {
   const GlobalStyle = createGlobalStyle`
@@ -16,13 +17,15 @@ function App() {
 
   return (
     <>
-      <GlobalStyle></GlobalStyle>
+      <TodoProvider>
+        <GlobalStyle></GlobalStyle>
 
-      <TodoLayout>
-        <TodoTime></TodoTime>
-        <TodoList></TodoList>
-        <TodoChecking open={false}></TodoChecking>
-      </TodoLayout>
+        <TodoLayout>
+          <TodoTime></TodoTime>
+          <TodoList></TodoList>
+          <TodoChecking open={false}></TodoChecking>
+        </TodoLayout>
+      </TodoProvider>
     </>
   );
 }

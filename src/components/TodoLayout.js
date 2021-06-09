@@ -11,7 +11,7 @@ const TodoLayoutBlock = styled.div`
     margin: 0 auto;
     margin-top: 96px;
     position: relative;
-    border-radius: 16px;
+    border-radius: 24px;
 `
 
 function TodoLayout({children}){
