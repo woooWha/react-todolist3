@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import {useTodoState} from '../TodoContext';
 
 const TodoTimeBlock = styled.div`
     padding: 48px 32px 24px 32px;
@@ -28,9 +27,8 @@ const TodoTimeBlock = styled.div`
     }
 `
 
-function TodoTime(){
-    const todos =useTodoState();
-    const leftTasks = todos.filter(todo => !todo.done)
+function TodoTime({todos}){
+    const leftTasks = todos.filter(todo => todo.done === false)
 
     const today = new Date();
     const yearName = today.toLocaleDateString('ko-KR', {

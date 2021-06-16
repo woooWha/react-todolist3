@@ -1,9 +1,12 @@
 import React from 'react';
 import styled, {css} from 'styled-components';
 import {MdDelete, MdDone} from 'react-icons/md';
-import { useTodoDispatch } from '../TodoContext';
 
-const TodoRemove = styled.div`
+function TodoItem({todo, todoCheckToggle,onRemove}){
+
+const{id, text ,done} = todo;
+
+    const TodoRemove = styled.div`
     color: #dee2e6;
     font-size: 24px;
     cursor: pointer;
@@ -11,6 +14,7 @@ const TodoRemove = styled.div`
         color: red;
     }
     display: none;
+    
 `
 const TodoItemBlock = styled.div`
     margin-bottom: 24px;
@@ -55,17 +59,13 @@ const TodoText = styled.div`
     `}
 `;
 
-function TodoItem({done, Text, id}){
-    const dispatch = useTodoDispatch();
-    const onToggle = () => dispatch({type: 'TOGGLE', id});
-    const onRemove = () => dispatch({type: 'REMOVE', id});
 
     return(
-        <TodoItemBlock>
-            <TodoCheck onClick={onToggle} done={done}>{done && <MdDone />}</TodoCheck>
-            <TodoText done={done}>{Text}</TodoText>
-            <TodoRemove onClick={onRemove}>
-                <MdDelete></MdDelete>
+        <TodoItemBlock> 
+            <TodoCheck onClick ={() => {todoCheckToggle(id)}} done={done}>{todo.done && <MdDone  />}</TodoCheck>
+            <TodoText done={done}>{todo.text}</TodoText>
+            <TodoRemove >
+                <MdDelete onClick={()=>{onRemove(id)}}></MdDelete>
             </TodoRemove>
         </TodoItemBlock>
     )
