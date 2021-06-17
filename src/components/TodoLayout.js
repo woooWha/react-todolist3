@@ -5,7 +5,7 @@ const TodoLayoutBlock = styled.div`
     width: 515px;
     height: 760px;
     background: white;
-    box-shadow: 0 0 8px 0 rgba(0,0,0,0.04);
+    box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.7);
     display: flex;
     flex-direction: column;
     margin: 0 auto;

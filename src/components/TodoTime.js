@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const TodoTimeBlock = styled.div`
     padding: 48px 32px 24px 32px;
-    border-bottom: 1px solid rgb(134, 142, 150, 0.2);
+    border-bottom: 1px solid rgba(134, 142, 150, 0.2);
     h1{
         font-size: 36px;
         font-weight: bold;
@@ -13,7 +13,7 @@ const TodoTimeBlock = styled.div`
     p.day {
         font-size: 21px;
         font-weight: 300;
-        color: rgb(134, 142, 150);
+        color: rgba(134, 142, 150);
         margin-top: 4px;
     }
     p.leftTask {
